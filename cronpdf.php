@@ -15,8 +15,8 @@ class createPDF {
   }
 
   private function checkReqs() {
-    $header = file_get_contents('./header.html');
-    $footer = file_get_contents('./footer.html');
+    $header = file_get_contents('./html/header.html');
+    $footer = file_get_contents('./html/footer.html');
     if($header == false || $footer == false) {
       die('Missing components!');
     } else {
