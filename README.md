@@ -4,16 +4,22 @@ This is a boilerplate for building projects using [dompdf](https://github.com/do
 
 ## usage & config
 
-| Options      | Type   | Details                                       |
-| ------       | -----  | -----                                         |
-| filename     | string | set the filename of the final pdf             |
-| orientation  | string | landscape or portrait                         |
-| endpoint     | string | the couchdb json endpoint                     |
-| scale_x      | int    | percent to scale the points on the x axis     |
-| scale_y      | int    | percent to scale the points on the y axis     |
-| shift_x      | int    | pixels to move the points on the x axis       |
-| shift_y      | int    | pixels to move the points on the y axis       |
-| z_index      | int    | z-index to set the points                     |
+```
+composer install
+```
+
+
+
+| Options      | Type        | Details                                       |
+| ------       | -----       | -----                                         |
+| filename     | string      | set the filename of the final pdf             |
+| orientation  | string      | landscape or portrait                         |
+| endpoint     | string      | the couchdb json endpoint                     |
+| scale_x      | int (float) | percent to scale the points on the x axis     |
+| scale_y      | int (float) | percent to scale the points on the y axis     |
+| shift_x      | int         | pixels to move the points on the x axis       |
+| shift_y      | int         | pixels to move the points on the y axis       |
+| z_index      | int         | z-index to set the points                     |
 
 ## caveats
 
