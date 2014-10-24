@@ -6,6 +6,9 @@ class createPDF {
 
   private $config, $html, $header, $footer;
 
+  /**
+   * Constructor to set our private variables and run the app
+   */
   function __construct() {
     global $config;
     $this->config = (object) $config;
@@ -14,6 +17,11 @@ class createPDF {
     $this->output();
   }
 
+  /**
+   * Check the application has all needed files, else abort
+   *
+   * @return void
+   */
   private function checkReqs() {
     $header = file_get_contents('./html/header.html');
     $footer = file_get_contents('./html/footer.html');
@@ -25,11 +33,21 @@ class createPDF {
     }
   }
 
+  /**
+   * Assemble the html
+   *
+   * @return void
+   */
   private function assemble() {
     $body = $this->buildBody();
     $this->html = $this->header.$body.$this->footer;
   }
 
+  /**
+   * Gently place the data into a pdf and save to disk
+   *
+   * @return void
+   */
   private function output() {
     $dompdf = new DOMPDF();
     $dompdf->load_html($this->html);
@@ -39,7 +57,12 @@ class createPDF {
     file_put_contents($this->config->filename, $output);
   }
 
-  private static function retrieveData() {
+  /** 
+   * Retrieve the json from the endpoint
+   *
+   * @return array
+   */
+  private function retrieveData() {
     $endpoint = $this->config->endpoint;
 
     $curl = curl_init($endpoint);
@@ -53,8 +76,13 @@ class createPDF {
     return json_decode($output);
   }
 
+  /**
+   * Build the body || This is the function to edit a per map basis
+   *
+   * @return string
+   */
   private function buildBody() { // Never skip leg day kids.
-    $sites = self::retrieveData();
+    $sites = $this->retrieveData();
     $sites = $sites->rows;
     $body  = "";
     $count = 0;
