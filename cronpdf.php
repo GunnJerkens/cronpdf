@@ -85,7 +85,6 @@ class createPDF {
     $sites = $this->retrieveData();
     $sites = $sites->rows;
     $body  = "";
-    $count = 0;
 
     foreach($sites as $site) {
       if($site->value->status !== 'disabled' && $site->value->status !== 'none') {
