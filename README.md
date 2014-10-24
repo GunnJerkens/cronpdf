@@ -6,16 +6,16 @@ This is built using the standard setup for data from our [feather](https://githu
 
 ## usage & config
 
-  | Options      | Type   | Details                                       |
-  | ------       | -----  | -----                                         |
-  | filename     | string | set the filename of the final pdf             |
-  | orientation  | string | landscape or portrait                         |
-  | endpoint     | string | the couchdb json endpoint                     |
-  | scale_x      | int    | percent to scale the points on the x axis     |
-  | scale_y      | int    | percent to scale the points on the y axis     |
-  | shift_x      | int    | pixels to move the points on the x axis       |
-  | shift_y      | int    | pixels to move the points on the y axis       |
-  | z_index      | int    | z-index to set the points                     |
+| Options      | Type   | Details                                       |
+| ------       | -----  | -----                                         |
+| filename     | string | set the filename of the final pdf             |
+| orientation  | string | landscape or portrait                         |
+| endpoint     | string | the couchdb json endpoint                     |
+| scale_x      | int    | percent to scale the points on the x axis     |
+| scale_y      | int    | percent to scale the points on the y axis     |
+| shift_x      | int    | pixels to move the points on the x axis       |
+| shift_y      | int    | pixels to move the points on the y axis       |
+| z_index      | int    | z-index to set the points                     |
 
 ## caveats
 
