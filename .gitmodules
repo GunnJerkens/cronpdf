@@ -1,3 +1,0 @@
-[submodule "dompdf"]
-	path = dompdf
-	url = git@github.com:dompdf/dompdf.git
