@@ -1,6 +1,9 @@
 <?php
+
+require 'vendor/autoload.php';
+define('DOMPDF_ENABLE_AUTOLOAD', false);
+require_once './vendor/dompdf/dompdf/dompdf_config.inc.php';
 require_once('./config.php');
-require_once('./dompdf/dompdf_config.inc.php');
 
 class createPDF {
 
@@ -90,7 +93,7 @@ class createPDF {
       if($site->value->status !== 'disabled' && $site->value->status !== 'none') {
         $x = ($site->value->x * $this->config->scale_x) - $this->config->shift_x;
         $y = ($site->value->y * $this->config->scale_y) - $this->config->shift_y;
-        $body .= '<img style="position:absolute;top:'.$y.'px;left:'.$x.'px;z-index: '.$this->config->z_index.';" src="./img/'.$site->value->status.'.png">';
+        $body .= '<img style="position:absolute;top:'.$y.'px;left:'.$x.'px;z-index: '.$this->config->z_index.';" src="./html/img/'.$site->value->status.'.png">';
         $body .= "\n";
       }
     }
