@@ -8,7 +8,7 @@ This is a boilerplate for building projects using [dompdf](https://github.com/do
 composer install
 ```
 
-
+Setup your config utilizing these options and then edit buildBody() if the scope of the points or structure is different than supplied.
 
 | Options      | Type        | Details                                       |
 | ------       | -----       | -----                                         |
@@ -20,6 +20,15 @@ composer install
 | shift_x      | int         | pixels to move the points on the x axis       |
 | shift_y      | int         | pixels to move the points on the y axis       |
 | z_index      | int         | z-index to set the points                     |
+
+To setup a cronjob use:
+
+```
+crontab -e
+00 00,12 * * * php /path/to/cronpdf/cronpdf.php > /dev/null 2>&1
+```
+
+This will run the cronjob every 12 hours at midnight & noon. Any errors/output encountered are piped into the black hole of doom.
 
 ## caveats
 
