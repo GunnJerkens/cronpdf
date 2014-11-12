@@ -2,6 +2,9 @@
 
 $config = array(
 
+  // dompdf
+  'remote_assets' => false,
+
   // Basics
   'filename'    => 'example.pdf',
   'orientation' => 'portrait',

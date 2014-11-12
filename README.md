@@ -10,16 +10,17 @@ composer install
 
 Setup your config utilizing these options and then edit buildBody() if the scope of the points or structure is different than supplied.
 
-| Options      | Type        | Details                                       |
-| ------       | -----       | -----                                         |
-| filename     | string      | set the filename of the final pdf             |
-| orientation  | string      | landscape or portrait                         |
-| endpoint     | string      | the couchdb json endpoint                     |
-| scale_x      | int (float) | percent to scale the points on the x axis     |
-| scale_y      | int (float) | percent to scale the points on the y axis     |
-| shift_x      | int         | pixels to move the points on the x axis       |
-| shift_y      | int         | pixels to move the points on the y axis       |
-| z_index      | int         | z-index to set the points                     |
+| Options       | Type        | Details                                         |
+| ------        | -----       | -----                                           |
+| remote_assets | bool        | allows assets from remote domains (img/css/etc) |
+| filename      | string      | set the filename of the final pdf               |
+| orientation   | string      | landscape or portrait                           |
+| endpoint      | string      | the couchdb json endpoint                       |
+| scale_x       | int (float) | percent to scale the points on the x axis       |
+| scale_y       | int (float) | percent to scale the points on the y axis       |
+| shift_x       | int         | pixels to move the points on the x axis         |
+| shift_y       | int         | pixels to move the points on the y axis         |
+| z_index       | int         | z-index to set the points                       |
 
 To setup a cronjob use:
 

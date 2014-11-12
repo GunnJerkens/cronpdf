@@ -1,9 +1,12 @@
 <?php
 
-require 'vendor/autoload.php';
+require_once(__DIR__.'/vendor/autoload.php';
+require_once(__DIR__.'/config.php');
+
 define('DOMPDF_ENABLE_AUTOLOAD', false);
-require_once './vendor/dompdf/dompdf/dompdf_config.inc.php';
-require_once('./config.php');
+define('DOMPDF_ENABLE_REMOTE', $config['remote_assets']);
+
+require_once(__DIR__.'/vendor/dompdf/dompdf/dompdf_config.inc.php');
 
 class createPDF {
 
@@ -26,8 +29,8 @@ class createPDF {
    * @return void
    */
   private function checkReqs() {
-    $header = file_get_contents('./html/header.html');
-    $footer = file_get_contents('./html/footer.html');
+    $header = file_get_contents(__DIR__.'/html/header.html');
+    $footer = file_get_contents(__DIR__.'/html/footer.html');
     if($header == false || $footer == false) {
       die('Missing components!');
     } else {
